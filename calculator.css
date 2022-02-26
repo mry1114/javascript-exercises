@@ -1,0 +1,54 @@
+body {
+    background-color: white;
+}
+
+.wrapper {
+    position: relative;
+    width: 750px;
+    background-color: rgb(228,234,241);
+    border: rgb(142,144,145);
+    border-radius: 4px;
+    padding:15px;
+    margin: 25px;
+
+}
+.head3 {
+    color: rgb(155,22,36);
+    font-size: 25px;
+    font-weight:800;
+}
+table, th,td {
+    border: 1px solid rgb(181, 186, 192);
+    border-collapse: collapse;
+    padding: 10px;
+}
+table{
+    width: 90%;
+}
+th{
+    background-color: rgba(216,216,216,255);
+}
+th,td {
+    width: 20px;
+}
+input {
+border:1px solid rgba(144,145,145,255);    
+width: 40px;
+height: 30px;
+margin:0px;
+}
+button {
+    color: white;
+    background-color:rgb(155,22,36);    ;
+    border:none;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    
+}
+.form{
+    overflow: auto;
+}
+.button2 {
+    float: right  
+}

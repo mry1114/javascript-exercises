@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+
+<body>
+    <h1>Grade Calculator</h1>
+    <div class = "wrapper">
+        <p class="head3">Activities</p>
+        <p>Give grades to the numeric activities:</p>
+        <form class = "form">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Short Name</th>
+                    <th>Weight</th>
+                    <th>Grade</th>
+                    <th>Percent</th>
+                </tr>
+                <tr class="row">
+                    <td>Activity 1</td>
+                    <td>A1</td>
+                    <td><input type="number" class="grades weight"> </td>
+                    <td><input type="number" class="grades score"> /
+                        <input type="number" class="grades total">
+                    </td>
+                    <td class="percent"></td>
+                </tr>
+                <tr class="row">
+                    <td>Activity 2</td>
+                    <td>A2</td>
+                    <td><input type="number" class="grades weight"> </td>
+                    <td><input type="number" class="grades score"> /
+                        <input type="number" class="grades total">
+                    </td>
+                    <td class="percent"></td>
+                </tr>
+
+            </table>
+            <br>
+            <button class="button" name="ADD">ADD ACTIVITY</button>
+            <p class="head3">Result</p>
+            <p id="result"></p>
+            <br>
+            <div class="button2">
+                <button id="weight">WEIGHTED</button>
+                <button id="mean">MEAN</button>
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="calculator.js"></script>
+
+</body>
+
+</html>
