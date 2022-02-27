@@ -64,41 +64,35 @@ const calculateMean = (event) => {
     document.querySelector('#result').innerHTML = result
 }
 
+const updatePercent = (scoreInput, totalInput, percentElement) => {
+    const score = Number(scoreInput.value)
+    const total = Number(totalInput.value)
+    if (!score || !total) {
+        percentElement.innerHTML = ''
+        return
+    }
+    const percent = score / total * 100
+
+    percentElement.innerHTML = percent
+}
+
 meanBtn.addEventListener('click', calculateMean)
 weightBtn.addEventListener('click', calculateWeight)
 
+const addInputEventListener = (input, index) => {
+    const scoreInput = scoreInputs[index]
+    const totalInput = totalInputs[index]
+    const percentElement = document.querySelectorAll('.percent')[index]
+
+    input.addEventListener('input', () => updatePercent(scoreInput, totalInput, percentElement))
+}
+
 scoreInputs.forEach((input, index) => {
-    const updatePercent = () => {
-        const score = Number(scoreInputs[index].value)
-        const total = Number(totalInputs[index].value)
-        if (!score || !total) {
-            document.querySelectorAll('.percent')[index].innerHTML = ''
-            return
-        }
-
-        const percent = score / total * 100
-
-        document.querySelectorAll('.percent')[index].innerHTML = percent
-    }
-
-    input.addEventListener('input', updatePercent)
+    addInputEventListener(input, index)
 })
 
 totalInputs.forEach((input, index) => {
-    const updatePercent = () => {
-        const score = Number(scoreInputs[index].value)
-        const total = Number(totalInputs[index].value)
-        if (!score || !total) {
-            document.querySelectorAll('.percent')[index].innerHTML = ''
-            return
-        }
-
-        const percent = score / total * 100
-
-        document.querySelectorAll('.percent')[index].innerHTML = percent
-    }
-
-    input.addEventListener('input', updatePercent)
+    addInputEventListener(input, index)
 })
 
 const addRow = (event) => {
@@ -121,23 +115,10 @@ const addRow = (event) => {
 
     const scoreInput = row.querySelector('.score')
     const totalInput = row.querySelector('.total')
-
-    const updatePercent = () => {
-        const score = Number(scoreInput.value)
-        const total = Number(totalInput.value)
-        if (!score || !total) {
-            row.querySelector('.percent').innerHTML = ''
-            return
-        }
-        const percent = score / total * 100
-
-        row.querySelector('.percent').innerHTML = percent
-    }
-    scoreInput.addEventListener('input', updatePercent)
-    totalInput.addEventListener('input', updatePercent)
-
-    
-
+    scoreInputs.push(scoreInput)
+    totalInputs.push(totalInput)
+    addInputEventListener(scoreInput,rows.length)
+    addInputEventListener(totalInput,rows.length)
 }
 
 addActivityBtn.addEventListener('click', addRow)
