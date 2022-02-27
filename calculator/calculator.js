@@ -67,8 +67,8 @@ weightBtn.addEventListener('click', calculateWeight)
 
 scoreInputs.forEach((input, index) => {
     const updatePercent = (event) => {
-        const score = scoreInputs[index].value
-        const total = totalInputs[index].value
+        const score = Number(scoreInputs[index].value)
+        const total = Number(totalInputs[index].value)
         if (!score || !total){
             document.querySelectorAll('.percent')[index].innerHTML = ''
             return
@@ -84,8 +84,8 @@ scoreInputs.forEach((input, index) => {
 
 totalInputs.forEach((input, index) => {
     const updatePercent = (event) => {
-        const score = scoreInputs[index].value
-        const total = totalInputs[index].value
+        const score = Number(scoreInputs[index].value)
+        const total = Number(totalInputs[index].value)
         if (!score || !total){
             document.querySelectorAll('.percent')[index].innerHTML = ''
             return
